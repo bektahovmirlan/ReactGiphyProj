@@ -1,0 +1,35 @@
+.header {
+    grid-area: h;
+    background-color: rgb(24, 56, 56);
+    position: relative;
+  }
+  .header .giphy {
+    color: white;
+    position: absolute;
+    left: 40px;
+    text-decoration: none;
+  }
+  .buttons {
+    position: absolute;  
+    left: 255px;
+    bottom: 7px;
+  }
+  .buttons .a {
+    background-color: rgb(53, 68, 31);
+    width: 90px;
+    height: 15px;
+    margin-left: 10px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(197, 174, 174);
+  }
