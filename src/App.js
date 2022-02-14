@@ -5,6 +5,8 @@ import Categories from './components/Category/Categories';
 import Trending from './components/Trending/Trending';
 import Headers from './components/Header/Header';
 import Random from './components/Random/Random';
+import Dance from './components/Category/SubCategs/Dance'
+import Coding from './components/Category/SubCategs/Coding'
 
 function App() {
   return (
@@ -21,7 +23,14 @@ function App() {
                     </Routes>
                     <Routes>
                       <Route path="random" element={<Random />}/>  
+                    </Routes>
+                    <Routes>
+                      <Route path="dance" element={<Dance />}/>  
                     </Routes>     
+                    <Routes>
+                      <Route path="coding" element={<Coding />}/>  
+                    </Routes>  
+                  
                   </div>
             </div>
     </BrowserRouter>
