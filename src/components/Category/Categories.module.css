@@ -1,0 +1,5 @@
+.categories {
+    grid-area: n;
+    background-color: chocolate;
+    padding: 20px;
+  }
