@@ -1,12 +1,20 @@
 import axios from 'axios';
 
   const LOAD_RANDOM = "LOAD_RANDOM"
+  const LOAD_DATA_SUCCESS = "LOAD_DATA_SUCCESS"
 
-  export const RandomReducer = (state = {}, action) => {
+  
+  const defaultState = {
+    data: [],
+  }
+
+  export const RandomReducer = (state = defaultState, action) => {
     switch(action.type) {
 
-      case LOAD_RANDOM:
-        return  action.payload
+      case LOAD_DATA_SUCCESS:
+        return {
+          data: action.payload
+        }
 
       default:
         return state
@@ -14,21 +22,18 @@ import axios from 'axios';
   }
 
   export const getRandom = () => {
+
     return async dispatch => {
-      try{
-          dispatch({type: LOAD_RANDOM})
-          let url = "api.giphy.com/v1/gifs/random"
-          let response = await axios.get(url, {params:{
-            api_key: "8vL2ThDZSHYWiWxdHohoyOhYjpKZz6kw",
-            tag: "burrito",
-            rating: "g",
-            random_id: "e826c9fc5c929e0d6c6d423841a282aa"
-              }
-          })
-          dispatch({type: LOAD_RANDOM, payload: response.data})
+      try { 
+         dispatch({type: LOAD_RANDOM})
+        let url = "https://api.giphy.com/v1/gifs/random?api_key=8vL2ThDZSHYWiWxdHohoyOhYjpKZz6kw&tag=burrito&rating=g"
+
+        let response = await axios.get(url)
+        
+         dispatch({type: LOAD_DATA_SUCCESS, payload: [response.data.data]})
+
+      } catch (err) {
+         console.log("error")
       }
-      catch(error){
-          console.log('error')
-      }
-    }
   }
+}

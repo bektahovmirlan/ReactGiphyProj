@@ -12,6 +12,7 @@ import axios from 'axios';
 
   export const TrendingReducer = (state = defaultState, action) => {
     switch(action.type) {
+      
       case LOAD_DATA_SUCCESS:
         return {
           ...state,

@@ -12,11 +12,24 @@ function Random() {
 
   console.log(data);
 
+  const renderGifs = () => {
+  
+    return (
+       <div>
+         {data.map((el) => (
+
+                <img key={el.id} src={el.images.fixed_height.url}/>
+                
+            ))}
+       </div>
+    )
+}
   
 
         return (
             <div>
               <h1>Random Giphys</h1>
+                {renderGifs()}
             </div>
            
         )
