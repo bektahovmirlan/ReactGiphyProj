@@ -9,7 +9,7 @@ function Coding() {
 
   useEffect(() => {
     dispatch(getCategory("coding"));
-  });
+  },[]);
 
  console.log(data);
 

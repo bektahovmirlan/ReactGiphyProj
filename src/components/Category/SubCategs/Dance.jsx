@@ -9,7 +9,7 @@ function Random() {
 
   useEffect(() => {
     dispatch(getCategory("dancing"));
-  });
+  },[]);
 
  console.log(data);
 

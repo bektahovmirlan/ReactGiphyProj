@@ -8,7 +8,7 @@ function Random() {
 
   useEffect(() => {
     dispatch(getRandom());
-  });
+  },[]);
 
   console.log(data);
 
