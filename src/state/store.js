@@ -1,15 +1,16 @@
-import {createStore, combineReducers, applyMiddleware} from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { TrendingReducer } from "./getTrending";
-import { RandomReducer } from "./getRandom";
-import { CategoryReducer } from "./getCategories";
+import randomReducer from "./getRandom";
+import categoryReducer from "./getCategories";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import trendingReducer from './getTrending';
 
 const rootReducer = combineReducers({
-    trending: TrendingReducer,
-    random: RandomReducer,
-    category: CategoryReducer
+   trending: trendingReducer,
+    random: randomReducer,
+    category: categoryReducer
 })
 
-
-export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+export const setupStore = () => {
+    return configureStore({
+       reducer: rootReducer
+    })
+}

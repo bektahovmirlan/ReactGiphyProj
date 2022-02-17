@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTrending } from "../../state/getTrending";
-import s from "./Trending.module.css"
 
 function Trending() {
   const dispatch = useDispatch();
@@ -9,7 +8,7 @@ function Trending() {
 
   useEffect(() => {
     dispatch(getTrending());
-  }, []);
+  }, [dispatch]);
 
   console.log(data)
 
@@ -19,7 +18,7 @@ function Trending() {
        <div>
          {data.map((el) => (
 
-                <img key={el.id} src={el.images.fixed_height.url}/>
+                <img key={el.id} src={el.images.fixed_height.url} alt="IMG"/>
                 
             ))}
        </div>

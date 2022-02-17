@@ -9,7 +9,7 @@ function Coding() {
 
   useEffect(() => {
     dispatch(getCategory("coding"));
-  },[]);
+  },[dispatch]);
 
  console.log(data);
 
@@ -19,7 +19,7 @@ function Coding() {
        <div>
          {data.map((el) => (
 
-                <img key={el.id} src={el.images.fixed_height.url}/>
+                <img key={el.id} src={el.images.fixed_height.url} alt="img"/>
                 
             ))}
        </div>
