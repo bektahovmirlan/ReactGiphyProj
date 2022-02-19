@@ -12,6 +12,9 @@ function Header() {
                 <NavLink className={s.a} to='/trending'>TRENDING</NavLink>
                 <NavLink className={s.a} to='/random'>RANDOM</NavLink>
             </div>
+            <div className={s.login}>
+              <NavLink className={s.sign} to='/login'>Sign in</NavLink>
+           </div>
 
         </div>
   );

@@ -19,7 +19,6 @@
     width: 90px;
     height: 15px;
     margin-left: 10px;
-    color: #fff;
     border-radius: 5px;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
@@ -32,4 +31,25 @@
     text-decoration: none;
     text-align: center;
     color: rgb(197, 174, 174);
+  }
+  .login{
+    float: right;
+  }
+
+  .sign {
+    width: 90px;
+    height: 15px;
+    margin-left: 10px;
+    color: red;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
   }
