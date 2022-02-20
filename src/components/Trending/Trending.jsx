@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getTrending } from "../../state/getTrending";
 
 function Trending() {
@@ -12,15 +13,21 @@ function Trending() {
 
   console.log(data)
 
+  const trendingMap = data.map((el, index) => (
+    <Link key={index} to="/giphyinfo">
+    <img onClick={()=>infoGiphy(el)} key={el.id} src={el.images.fixed_height.url} alt="IMG"/>
+    </Link>
+  ))
+
+  const infoGiphy =(data) =>{
+    localStorage.setItem("data", JSON.stringify(data))
+  }
+
   const renderGifs = () => {
   
     return (
        <div>
-         {data.map((el) => (
-
-                <img key={el.id} src={el.images.fixed_height.url} alt="IMG"/>
-                
-            ))}
+         {trendingMap}
        </div>
     )
 }

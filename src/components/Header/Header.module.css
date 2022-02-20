@@ -33,7 +33,8 @@
     color: rgb(197, 174, 174);
   }
   .login{
-    float: right;
+    position: absolute;
+    left: 1200px;
   }
 
   .sign {

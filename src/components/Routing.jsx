@@ -6,6 +6,7 @@ import Dance from './Category/SubCategs/Dance'
 import Coding from './Category/SubCategs/Coding'
 import LoginPage from './Athentication//LoginPage';
 import RegisterPage from './Athentication/RegisterPage';
+import GiphyInfo from './GiphyInfo';
 
 function Routing() {
   return (
@@ -24,13 +25,16 @@ function Routing() {
                     </Routes>     
                     <Routes>
                       <Route path="coding" element={<Coding />}/>  
-                    </Routes>  
+                    </Routes> 
                     <Routes>
                       <Route path="login" element={<LoginPage />}/>  
-                    </Routes>
+                    </Routes> 
                     <Routes>
                       <Route path="register" element={<RegisterPage />}/>  
-                    </Routes>
+                    </Routes>  
+                    <Routes>
+                      <Route path="/giphyinfo" element={<GiphyInfo />}/>  
+                    </Routes> 
                   </div>
 
   );
