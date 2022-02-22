@@ -15,8 +15,8 @@ function Header() {
         <div className={s.header}>
             <h1><NavLink className={s.giphy} to='/'>GIPHY</NavLink></h1>
             <div className={s.buttons}>
-                {isAuth ? <NavLink className={s.a} to='/trending'>TRENDING</NavLink> :<p></p>}
-                {isAuth ? <NavLink className={s.a} to='/random'>RANDOM</NavLink> : <p></p>}
+                <NavLink className={s.a} to='/trending'>TRENDING</NavLink>
+                <NavLink className={s.a} to='/random'>RANDOM</NavLink>
             </div>
             <div className={s.login}>
               {isAuth ? <NavLink onClick={() => dispatch(removeUser())} className={s.sign} to='/login'>Log Out <br />{email}</NavLink>

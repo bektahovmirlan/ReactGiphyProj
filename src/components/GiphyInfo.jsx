@@ -1,9 +1,14 @@
 import React, {useEffect, useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { setFavorite, removeFavorite } from '../state/favoriteReducer';
+
 
 const GiphyInfo = () => {
     const data = localStorage.getItem("data");
     const parse = JSON.parse(data);
     const [local, setLocal] = useState(false);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
       if (parse){
@@ -11,7 +16,10 @@ const GiphyInfo = () => {
       }
     }, [])
 
-    console.log(parse)
+const addToFavorite = () => {
+   
+}
+
    
     if(local) { return  (
         <div>
@@ -20,6 +28,7 @@ const GiphyInfo = () => {
             <div>
                 <img src={parse.images.fixed_height.url}/>
             </div>
+            <button onClick={() => addToFavorite()} >Add to favorite</button>
             <div>
                 <span>Имя профиля:</span>
                 <span> {parse.username} </span>

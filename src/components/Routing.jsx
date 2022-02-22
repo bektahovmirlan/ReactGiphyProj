@@ -7,6 +7,7 @@ import Coding from './Category/SubCategs/Coding'
 import LoginPage from './Athentication//LoginPage';
 import RegisterPage from './Athentication/RegisterPage';
 import GiphyInfo from './GiphyInfo';
+import Favorite from './Favorite';
 
 function Routing() {
   return (
@@ -34,6 +35,9 @@ function Routing() {
                     </Routes>  
                     <Routes>
                       <Route path="/giphyinfo" element={<GiphyInfo />}/>  
+                    </Routes> 
+                    <Routes>
+                      <Route path="/favorite" element={<Favorite />}/>  
                     </Routes> 
                   </div>
 
